@@ -1,0 +1,10 @@
+body{
+	background-color:black;
+	color: green;
+}
+#display{
+    width: 50%;
+    font-size: 72px;
+    text-align: left;
+    margin: 0px auto;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stopwatch</title>
+<link href="style.css", rel="stylesheet">
+<script src="script.js"></script>
+
+</head>
+<body>
+
+    <div class="container">
+	<p>start counting the numbers by clicking the numbers in ascending order</p>
+	<p><em>TIME</em></p>
+
+        <div id="display">
+            00:00
+        </div>
+	<div><p>best time</p></div>
+	<div id="best time">
+	    00:00
+	</div>
+
+        <div class="buttons">
+            <button id="startStop" onclick="startStop()">newgame</button> 
+        </div>
+
+    </div>
+<table>
+	<tr id="r1">
+		<th><button id="1" onclick="count()">&nbsp</button></th> 
+		<th><button id="2" onclick="count()">&nbsp</button></th>
+		<th><button id="3" onclick="count()">&nbsp</button></th>
+		<th><button id="4" onclick="count()">&nbsp</button></th>
+	</tr>
+	<tr id="r2">
+		<th><button id="5" onclick="count()">&nbsp</button></th>
+		<th><button id="6" onclick="count()">&nbsp</button></th>
+		<th><button id="7" onclick="count()">&nbsp</button></th>
+		<th><button id="8" onclick="count()">&nbsp</button></th> 
+	</tr>
+	<tr id="r3">
+		<th><button id="9" onclick="count()">&nbsp</button></th> 
+		<th><button id="10" onclick="count()">&nbsp</button></th> 
+		<th><button id="11" onclick="count()">&nbsp</button></th>
+		<th><button id="12" onclick="count()">&nbsp</button></th> 
+	</tr>
+	<tr id="r4">
+		<th><button id="13" onclick="count()">&nbsp</button></th> 
+		<th><button id="14" onclick="count()">&nbsp</button></th> 
+		<th><button id="15" onclick="count()">&nbsp</button></th> 
+		<th><button id="16" onclick="count()">&nbsp</button></th> 
+	</tr>
+</table>
+		
+</body>
+</html>
