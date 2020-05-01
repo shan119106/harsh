@@ -4,16 +4,16 @@ let stp=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 let large=0;
 let a=0;
 //function for shuffling
-let shufar=shuffle(ar){
+let shuffle=function(arr){
 	let newPos;
 	let temp;
-	for( let i=ar.length-1,i>0,i--){
+	for( let i=arr.length-1,i>0,i--){
 		newPos=Math.floor(Math.random()*(i+1));
-		temp=ar[i];
-		ar[i]=ar[newPos];
-		ar[newPos]=temp;
+		temp=arr[i];
+		arr[i]=arr[newPos];
+		arr[newPos]=temp;
 	}
-	return ar;
+	return arr;
 }
 function game1(){
 	 for( let j=1,j<17,j++){
