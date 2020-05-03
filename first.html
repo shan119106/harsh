@@ -11,49 +11,87 @@
 </head>
 <body>
 
-    <div class="container">
-	<p>start counting the numbers by clicking the numbers in ascending order</p>
+<div class="container">
+
+	<p><em>start counting numbers by clicking in ascending order</em></p>
+
 	<p><em>TIME</em></p>
 
+
+
         <div id="display">
+
             00:00
+
         </div>
-	<div><p>best time</p></div>
+
+	<div><p>BEST TIME</p></div>
+
 	<div id="best time">
+
 	    00:00
+
 	</div>
 
-        <div class="buttons">
-            <button id="startStop" onclick="startStop()">newgame</button> 
-        </div>
 
-    </div>
-<table>
-	<tr id="r1">
-		<th><button id="1" onclick="count()">&nbsp</button></th> 
-		<th><button id="2" onclick="count()">&nbsp</button></th>
-		<th><button id="3" onclick="count()">&nbsp</button></th>
-		<th><button id="4" onclick="count()">&nbsp</button></th>
+        <div class="buttons">
+
+           <button  type="button" id="startStop" onclick="game()">newgame</button> 
+           
+
+        </div>
+ </div>
+
+
+<table align="center">
+
+  <tr class="r1">
+
+	    <th><button  type="button" id=1 onclick="count(this.id)">&nbsp</button</th> 
+
+		<th><button  type="button" id=2 onclick="count(this.id)">&nbsp</button></th>
+
+		<th><button  type="button" id=3 onclick="count(this.id)">&nbsp</button></th>
+
+		<th><button type="button"id=4 onclick="count(this.id)">&nbsp</button></th>
+
 	</tr>
 	<tr id="r2">
-		<th><button id="5" onclick="count()">&nbsp</button></th>
-		<th><button id="6" onclick="count()">&nbsp</button></th>
-		<th><button id="7" onclick="count()">&nbsp</button></th>
-		<th><button id="8" onclick="count()">&nbsp</button></th> 
+
+		<th><button type="button" id=5 onclick="count(this.id)">&nbsp</button></th>
+
+		<th><button type="button" id=6 onclick="count(this.id)">&nbsp</button></th>
+
+		<th><button type="button" id=7 onclick="count(this.id)">&nbsp</button></th>
+
+		<th><button type="button" id=8 onclick="count(this.id)">&nbsp</button></th> 
+
 	</tr>
+
 	<tr id="r3">
-		<th><button id="9" onclick="count()">&nbsp</button></th> 
-		<th><button id="10" onclick="count()">&nbsp</button></th> 
-		<th><button id="11" onclick="count()">&nbsp</button></th>
-		<th><button id="12" onclick="count()">&nbsp</button></th> 
+
+		<th><button type="button" id=9 onclick="count(this.id)">&nbsp</button></th> 
+
+		<th><button type="button" id=10 onclick="count(this.id)">&nbsp</button></th> 
+
+		<th><button type="button" id=11 onclick="count(this.id)">&nbsp</button></th>
+
+		<th><button type="button" id=12 onclick="count(this.id)">&nbsp</button></th> 
+
 	</tr>
+
 	<tr id="r4">
-		<th><button id="13" onclick="count()">&nbsp</button></th> 
-		<th><button id="14" onclick="count()">&nbsp</button></th> 
-		<th><button id="15" onclick="count()">&nbsp</button></th> 
-		<th><button id="16" onclick="count()">&nbsp</button></th> 
+
+		<th><button type="button" id=13 onclick="count(this.id)">&nbsp</button></th> 
+
+		<th><button type="button" id=14 onclick="count(this.id)">&nbsp</button></th> 
+
+		<th><button type="button" id=15 onclick="count(this.id)">&nbsp</button></th> 
+
+		<th><button type="button" id=16 onclick="count(this.id)">&nbsp</button></th> 
+
 	</tr>
-</table>
-		
+
+	</table>		
 </body>
 </html>
