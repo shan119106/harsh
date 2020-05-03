@@ -1,78 +1,20 @@
-//variables for working of the table
-let ar=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
-let stp=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-let large=0;
-let a=0;
-//function for shuffling
-let shuffle=function(arr){
-	let newPos;
-	let temp;
-	for( let i=arr.length-1,i>0,i--){
-		newPos=Math.floor(Math.random()*(i+1));
-		temp=arr[i];
-		arr[i]=arr[newPos];
-		arr[newPos]=temp;
-	}
-	return arr;
-}
-function game1(){
-	 for( let j=1,j<17,j++){
-	document.getElementById(j.toString()).innerHTML=shufar[j-1];
-    }
-	stp=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-	large=0;
-}
-function stop(){
-	for(let p=0,p<17,p++){
-		if(stp[p]===2){
-			let a++;
-		}
-	}
-	if(a===16){
-		startStop();
-	}
-	a=0;
-}
-function count(){
-	let ID=this.id;
-	stp[+ID]++;
-	let number=document.getElementById(ID);
-	if((large+1)===number){
-		large=large+1;
-	}
-	else(){
-		alert("ur pressing a wrong number");
-	}
-	if(stp[+ID]===1){
-		document.getElementById(ID).innerHTML+=16;
-	}
-	else if(stp[+ID]===2){
-		document.getElementById(ID).innerHTML=&nbsp;
-	}
-	else(){
-		stp[+ID]=2;
-	}
-	stop();
-}
-	
-	
 
-//Define vars to hold time values
+
 let seconds = 0;
 let minutes = 0;
-let hours = 0;
+
 
 //Define vars to hold "display" value
 let displaySeconds = 0;
 let displayMinutes = 0;
-let displayHours = 0;
-let besttime="00:00";
 
 //Define var to hold setInterval() function
 let interval = null;
+let bestime="01.00";
 
 //Define var to hold stopwatch status
 let status = "stopped";
+
 
 //Stopwatch function (logic to determine when to increment next value, etc.)
 function stopWatch(){
@@ -84,7 +26,9 @@ function stopWatch(){
         seconds = 0;
         minutes++;
 
-       }
+      
+
+    }
 
     //If seconds/minutes/hours are only one digit, add a leading 0 to the value
     if(seconds < 10){
@@ -103,38 +47,89 @@ function stopWatch(){
 
    
 
-    //Display updated time values to user
-    document.getElementById("display").innerHTML =  displayMinutes + ":" + displaySeconds;
-    
-	
+    //Display updated time values to 
+    document.getElementById("display").innerHTML = displayMinutes + ":" + displaySeconds;
 
 }
 
 
 
 function startStop(){
-    
+
     if(status === "stopped"){
 
         //Start the stopwatch (by calling the setInterval() function)
-        document.getElementById("startStop").innerHTML = "Stop";
-	interval = window.setInterval(stopWatch, 1000);
+        interval = window.setInterval(stopWatch, 1000);
+        document.getElementById("startStop").innerHTML = "  ";
         status = "started";
 
     }
     else{
-	let time=document.getElementById("display");
-	if(besttime < time){
-		besttime= (+time);
-	}
-        window.clearInterval(interval);
-	seconds = 0;
-   	 minutes = 0;
-    	document.getElementById("display").innerHTML = "00:00";
-        document.getElementById("startStop").innerHTML = "newgame";
-        status = "stopped";
-	document.getElementById("best time").innerHTML= besttime;
-
+    	 window.clearInterval(interval);
+         let t=document.getElementById("display");
+          if(bestime>(t.innerHTML)){
+         	bestime=t.innerHTML;
+           }
+         seconds=0;
+         minutes=0;
+         document.getElementById("display").innerHTML="00:00";
+         document.getElementById("startStop").innerHTML = "newgame";
+         status = "stopped";
+         document.getElementById("best time").innerHTML=bestime;
+         
+     
     }
-	game1();
+
+}
+
+let ar=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+let stp=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+let large=0;
+let a=0;
+let shuffle=function(arr){
+	let newPos;
+	let temp;
+	for( let i=arr.length-1;i>0;i--){
+		newPos=Math.floor(Math.random()*(i+1));
+		temp=arr[i];
+		arr[i]=arr[newPos];
+		arr[newPos]=temp;
+	}
+	return arr;
+}
+
+function game(){
+	let shufar=shuffle(ar);
+	for(let j=1;j<17;j++){
+		
+		document.getElementById(j).innerHTML=shufar[j-1];
+	}
+	stp=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+	large=0;
+    a=0;
+    startStop();
+}
+function count(e){
+	let r=Number(e);
+    let k=document.getElementById(e);
+    if(large+1===+(k.innerHTML)){
+    	large=large+1;
+        stp[r-1]++;
+    if(stp[r-1]===1){
+    document.getElementById(e).innerHTML=+(k.innerHTML)+16;
+    }
+    else if(stp[r-1]===2){
+    document.getElementById(e).innerHTML="&nbsp";
+    a++
+    }
+    else{ stp[r-1]=2;
+    }
+        }
+    else{
+    	alert("ur pressing a wrong number");
+        }  
+	if(a===16){
+    	startStop();
+    }
+    
 }
