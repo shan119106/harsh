@@ -1,5 +1,4 @@
 
-
 let seconds = 0;
 let minutes = 0;
 
@@ -10,7 +9,7 @@ let displayMinutes = 0;
 
 //Define var to hold setInterval() function
 let interval = null;
-let bestime="01.00";
+let bestime="10.00";
 
 //Define var to hold stopwatch status
 let status = "stopped";
@@ -82,8 +81,8 @@ function startStop(){
 
 }
 
-let ar=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
-let stp=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+let ar=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+let stp=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 let large=0;
 let a=0;
 let shuffle=function(arr){
@@ -100,11 +99,11 @@ let shuffle=function(arr){
 
 function game(){
 	let shufar=shuffle(ar);
-	for(let j=1;j<17;j++){
+	for(let j=1;j<21;j++){
 		
 		document.getElementById(j).innerHTML=shufar[j-1];
 	}
-	stp=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+	stp=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 	large=0;
     a=0;
     startStop();
@@ -116,7 +115,7 @@ function count(e){
     	large=large+1;
         stp[r-1]++;
     if(stp[r-1]===1){
-    document.getElementById(e).innerHTML=+(k.innerHTML)+16;
+    document.getElementById(e).innerHTML=Number(k.innerHTML)+20;
     }
     else if(stp[r-1]===2){
     document.getElementById(e).innerHTML="&nbsp";
@@ -128,8 +127,9 @@ function count(e){
     else{
     	alert("ur pressing a wrong number");
         }  
-	if(a===16){
+	if(a===20){
     	startStop();
     }
     
 }
+
